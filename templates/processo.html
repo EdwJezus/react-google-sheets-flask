@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<style>
+    html {
+        background-color: rgb(140, 206, 206);
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 30px;
+    }
+    fieldset {
+        background-color: white;
+        padding: 80px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+                    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+    table {
+        border-collapse: collapse;
+    }
+    th, td {
+        background-color: rgb(124, 177, 177);
+        border: 1px solid black;
+        padding: 8px 12px;
+    }
+</style>
+<title>Home</title>
+</head>
+<body>
+
+    <h1> Processo escolhido </h1>
+
+    <fieldset>
+    <table>
+        <tr>
+            <th>Representante</th>
+            <th>Numero</th>
+            <th>Status</th>
+            <th>Senha</th>
+        </tr>
+            {% for indice in user_dados_processo %}
+                <td>{{ indice }}</td>
+            {% endfor %}
+        </tr>
+    </table>
+    </fieldset>
+
+</body>
+</html>

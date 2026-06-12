@@ -10,7 +10,7 @@ SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 
 # ID e cedulas da planilha
 SAMPLE_SPREADSHEET_ID = "1PsXdzE7g7rGilm6IiwLbyTaYFpaMsKT6VFqD-3kKJhE"
-SAMPLE_RANGE_NAME = "Página1!A1:C10"
+SAMPLE_RANGE_NAME = "Página1!A1:D10"
 
 def pega_planilha():
   creds = None
