@@ -14,7 +14,9 @@ function Processo() {
 
                 <h2>Nenhum processo encontrado.</h2>
 
-                <button onClick={() => navigate("/")}>
+                <button
+                    onClick={() => navigate("/")}
+                >
                     Voltar
                 </button>
 
@@ -30,17 +32,21 @@ function Processo() {
 
             <fieldset>
 
-                <div className="table-container">
+                {/* ======== DESKTOP ======== */}
+
+                <div className="desktop-view">
 
                     <table>
 
                         <thead>
 
                             <tr>
-                                <th>Nome</th>
+
+                                <th>Representante</th>
                                 <th>Número</th>
                                 <th>Status</th>
                                 <th>Senha</th>
+
                             </tr>
 
                         </thead>
@@ -49,7 +55,7 @@ function Processo() {
 
                             <tr>
 
-                                <td>{processo.nome}</td>
+                                <td>{processo.representante}</td>
                                 <td>{processo.numero}</td>
                                 <td>{processo.status}</td>
                                 <td>{processo.senha}</td>
@@ -59,6 +65,32 @@ function Processo() {
                         </tbody>
 
                     </table>
+
+                </div>
+
+                {/* ======== MOBILE ======== */}
+
+                <div className="mobile-view">
+
+                    <div className="info-item">
+                        <span>Representante</span>
+                        <p>{processo.representante}</p>
+                    </div>
+
+                    <div className="info-item">
+                        <span>Número</span>
+                        <p>{processo.numero}</p>
+                    </div>
+
+                    <div className="info-item">
+                        <span>Status</span>
+                        <p>{processo.status}</p>
+                    </div>
+
+                    <div className="info-item">
+                        <span>Senha</span>
+                        <p>{processo.senha}</p>
+                    </div>
 
                 </div>
 
