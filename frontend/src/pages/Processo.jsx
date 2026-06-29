@@ -32,45 +32,7 @@ function Processo() {
 
             <fieldset>
 
-                {/* ======== DESKTOP ======== */}
-
-                <div className="desktop-view">
-
-                    <table>
-
-                        <thead>
-
-                            <tr>
-
-                                <th>Representante</th>
-                                <th>Número</th>
-                                <th>Status</th>
-                                <th>Senha</th>
-
-                            </tr>
-
-                        </thead>
-
-                        <tbody>
-
-                            <tr>
-
-                                <td>{processo.representante}</td>
-                                <td>{processo.numero}</td>
-                                <td>{processo.status}</td>
-                                <td>{processo.senha}</td>
-
-                            </tr>
-
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-                {/* ======== MOBILE ======== */}
-
-                <div className="mobile-view">
+                <div className="info-container">
 
                     <div className="info-item">
                         <span>Representante</span>
