@@ -15,7 +15,7 @@ function Login() {
 
         try {
 
-            const resposta = await fetch("https://direitoprocessos.onrender.com/login_user", { // mudar para endereço certo
+            const resposta = await fetch("https://react-google-sheets-flask.onrender.com/login_user", { // mudar para endereço certo
 
                 method: "POST",
 
