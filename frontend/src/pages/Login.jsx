@@ -15,7 +15,7 @@ function Login() {
 
         try {
 
-            const resposta = await fetch("http://127.0.0.1:5000/login_user", {
+            const resposta = await fetch("https://direitoprocessos.onrender.com/login_user", { // mudar para endereço certo
 
                 method: "POST",
 
