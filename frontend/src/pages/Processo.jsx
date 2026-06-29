@@ -35,8 +35,8 @@ function Processo() {
                 <div className="info-container">
 
                     <div className="info-item">
-                        <span>Representante</span>
-                        <p>{processo.representante}</p>
+                        <span>Nome</span>
+                        <p>{processo.nome}</p>
                     </div>
 
                     <div className="info-item">
