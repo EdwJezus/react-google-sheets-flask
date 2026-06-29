@@ -24,7 +24,7 @@ def login_user():
             return jsonify({
                 "sucesso": True,
                 "processo": {
-                    "representante": processo[0],
+                    "nome": processo[0],
                     "numero": processo[1],
                     "status": processo[2],
                     "senha": processo[3]

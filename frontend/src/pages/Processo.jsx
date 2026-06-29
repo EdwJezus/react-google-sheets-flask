@@ -9,57 +9,68 @@ function Processo() {
     const processo = location.state;
 
     if (!processo) {
-
         return (
-            <>
+            <div className="processo-container">
+
                 <h2>Nenhum processo encontrado.</h2>
 
                 <button onClick={() => navigate("/")}>
                     Voltar
                 </button>
-            </>
-        );
 
+            </div>
+        );
     }
 
     return (
 
         <div className="processo-container">
-            <h1>Processo escolhido</h1>
+
+            <h1>Processo encontrado</h1>
 
             <fieldset>
 
-                <table>
+                <div className="table-container">
 
-                    <thead>
+                    <table>
 
-                        <tr>
+                        <thead>
 
-                            <th>Representante</th>
-                            <th>Número</th>
-                            <th>Status</th>
-                            <th>Senha</th>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Número</th>
+                                <th>Status</th>
+                                <th>Senha</th>
+                            </tr>
 
-                        </tr>
+                        </thead>
 
-                    </thead>
+                        <tbody>
 
-                    <tbody>
+                            <tr>
 
-                        <tr>
+                                <td>{processo.nome}</td>
+                                <td>{processo.numero}</td>
+                                <td>{processo.status}</td>
+                                <td>{processo.senha}</td>
 
-                            <td>{processo.representante}</td>
-                            <td>{processo.numero}</td>
-                            <td>{processo.status}</td>
-                            <td>{processo.senha}</td>
+                            </tr>
 
-                        </tr>
+                        </tbody>
 
-                    </tbody>
+                    </table>
 
-                </table>
+                </div>
+
+                <button
+                    className="voltar"
+                    onClick={() => navigate("/")}
+                >
+                    Nova consulta
+                </button>
 
             </fieldset>
+
         </div>
 
     );

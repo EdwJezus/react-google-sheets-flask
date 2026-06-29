@@ -6,7 +6,7 @@ from googleapiclient.discovery import build
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 
 SAMPLE_SPREADSHEET_ID = "1PsXdzE7g7rGilm6IiwLbyTaYFpaMsKT6VFqD-3kKJhE"
-SAMPLE_RANGE_NAME = "Página1!A1:D10" # pagina e coordenadas da planilha a  serem puxadas
+SAMPLE_RANGE_NAME = "Página1!A1:D100" # pagina e coordenadas da planilha a serem puxadas
 
 
 def pega_planilha():
