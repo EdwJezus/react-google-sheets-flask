@@ -1,74 +1,71 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../css/Login.css";
+import "./Login.css";
 
 function Login() {
 
     const [numeroProcesso, setNumeroProcesso] = useState("");
     const [senhaProcesso, setSenhaProcesso] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
 
     async function handleSubmit(event) {
-
         event.preventDefault();
 
+        setLoading(true);
+
         try {
-
-            const resposta = await fetch("https://react-google-sheets-flask.onrender.com/login_user", { // mudar para endereço certo
-
+            const resposta = await fetch("https://SEU-BACKEND.onrender.com/login_user", {
                 method: "POST",
-
                 headers: {
                     "Content-Type": "application/json"
                 },
-
                 body: JSON.stringify({
-
                     numero_processo: numeroProcesso,
                     senha_processo: senhaProcesso
-
                 })
-
             });
 
             const dados = await resposta.json();
 
             if (dados.sucesso) {
-
                 navigate("/processo", {
                     state: dados.processo
                 });
-
             } else {
-
                 alert(dados.mensagem);
-
             }
 
         } catch (erro) {
-
             console.error(erro);
             alert("Erro ao conectar com o servidor.");
-
         }
 
+        setLoading(false);
     }
 
     return (
-
         <div className="login-container">
-            <h1>Buscador de processo (login)</h1>
+
+            <img
+                src="/logo.png"
+                alt="Logo da empresa"
+                className="logo"
+            />
 
             <fieldset>
 
                 <form onSubmit={handleSubmit}>
+
+                    <h1>Buscador de processo</h1>
 
                     <input
                         type="text"
                         placeholder="Digite o número do processo"
                         value={numeroProcesso}
                         onChange={(e) => setNumeroProcesso(e.target.value)}
+                        disabled={loading}
                         required
                     />
 
@@ -77,20 +74,26 @@ function Login() {
                         placeholder="Digite a senha"
                         value={senhaProcesso}
                         onChange={(e) => setSenhaProcesso(e.target.value)}
+                        disabled={loading}
                         required
                     />
 
-                    <button type="submit">
-                        Enviar
+                    <button type="submit" disabled={loading}>
+                        {loading ? "Buscando..." : "Entrar"}
                     </button>
 
                 </form>
 
             </fieldset>
+
+            {loading && (
+                <div className="loading-overlay">
+                    <div className="spinner"></div>
+                </div>
+            )}
+
         </div>
-
     );
-
 }
 
 export default Login;

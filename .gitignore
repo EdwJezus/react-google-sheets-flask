@@ -1,7 +1,11 @@
-token.json
+# Android build
+android/
 
-client_secret.json
+# Capacitor / build
+dist/
 
-service_account_key.json
+# Node
+node_modules/
 
+# Python
 __pycache__/

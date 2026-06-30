@@ -28,9 +28,15 @@ function Processo() {
 
         <div className="processo-container">
 
-            <h1>Processo encontrado</h1>
+            <img
+                src="/logo.png"
+                alt="Logo da empresa"
+                className="logo"
+            />
 
             <fieldset>
+
+                <h1>Processo encontrado</h1>
 
                 <div className="info-container">
 
